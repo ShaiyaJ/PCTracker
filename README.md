@@ -10,6 +10,9 @@ To write a PC tracker file you just write in the raw frequencies.
 
 Each line has a target duration of 100ms and the right-most "channel" gets highest priority per line.
 
+Anything else in the file gets treated as garbage data. Under the hood all it's doing is separating lines by `\n` and segments by ` `. If a segment doesn't contain a valid frequency then it's treated as a comment and ignored.
+So feel free to write comments into your songs if you want to help make things clearer.
+
 ### Playing files
 Run main.py with a single argument, the path to the target file.
 
