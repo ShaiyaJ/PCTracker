@@ -4,7 +4,11 @@ import platform
 
 if platform.system() == "Linux":
     def play_beep(frequency: int):
-        pass
+        beep = frequency*100
+        
+        with open("/dev/audio", "wb") as audio:
+            audio.write(beep)
+            audo.close()
 
 elif platform.system() == "Darwin":
     def play_beep(frequency: int):
